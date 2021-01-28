@@ -9,11 +9,11 @@
 \arguments{
 \item{x}{A target-vector. Must be contained in data.}
 
-\item{data}{A data.frame containing the entire training set.}
-
 \item{method}{A string indicating the ML algorithm to be used. See generic function.}
 
 \item{tune}{A model-specific tune object. See generic function.}
+
+\item{data}{A data.frame containing the entire training set.}
 }
 \value{
 A trained ML model.
