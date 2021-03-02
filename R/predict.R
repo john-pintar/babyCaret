@@ -154,13 +154,10 @@ predict.trainedKnn <- function(trainedModel, newData, dfOut = TRUE)
 ## Begin final function
     # goes to predict method in knn2.R
     predictions <- predict(trainedModel$model, newData)
-    print(newData)
-    print(predictions)
     # If doing classification, need to convert back to factor with
     # appropriate labels
     if (trainedModel$model$myLevels > 0)
     {
-        print(predictions)
         predictions <- levelMap(predictions, levels(trainedModel$vars$dv))
         #TODO: get rid of this hackish fix
         if (nrow(newData) == 1)
