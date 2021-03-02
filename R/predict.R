@@ -61,11 +61,11 @@ predDataCheck <- function(trainedModel, newData)
     }
 
     # class match warning
-    if(!identical(newClasses, modelClasses))
-    {
-         flag <- TRUE
-         warning("Column classes are not identical between the model's training set and newData.")
-    }
+    # if(!identical(newClasses, modelClasses))
+    # {
+    #      flag <- TRUE
+    #      warning("Column classes are not identical between the model's training set and newData.")
+    # }
 
     # colnames warning
     if(!identical(colnames(newData), colnames(trainedModel$vars$data)))
@@ -127,6 +127,7 @@ levelMap <- function(preds, ogLevels)
     return(out)
 }
 
+
 ########################
 # predict() S3 Methods #
 ########################
@@ -153,6 +154,8 @@ predict.trainedKnn <- function(trainedModel, newData, dfOut = TRUE)
 {
 ## Begin final function
     # goes to predict method in knn2.R
+    #TODO: remove this bugfix for NA handling
+    newData[trainedModel$vars$dvName] <- 0
     predictions <- predict(trainedModel$model, newData)
     # If doing classification, need to convert back to factor with
     # appropriate labels
