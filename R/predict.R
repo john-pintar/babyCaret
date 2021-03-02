@@ -157,14 +157,14 @@ predict.trainedKnn <- function(trainedModel, newData, dfOut = TRUE)
     #TODO: remove this bugfix for NA handling
     newData[trainedModel$vars$dvName] <- 0
     predictions <- predict(trainedModel$model, newData)
+    #TODO: get rid of this hackish fix
+    if (nrow(newData) == 1)
+        predictions <- predictions[1]
     # If doing classification, need to convert back to factor with
     # appropriate labels
     if (trainedModel$model$myLevels > 0)
     {
         predictions <- levelMap(predictions, levels(trainedModel$vars$dv))
-        #TODO: get rid of this hackish fix
-        if (nrow(newData) == 1)
-            predictions <- predictions[1]
     }
 
     if (dfOut == FALSE)
