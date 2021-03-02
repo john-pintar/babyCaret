@@ -115,6 +115,17 @@ keepInCommon <- function(df, compDf)
     return(df[sect])
 }
 
+#########################
+# factor mapping bugfix #
+#########################
+
+levelMap <- function(preds, ogLevels)
+{
+    out <- as.factor(preds)
+    levels(out) <- ogLevels 
+    
+    return(out)
+}
 
 ########################
 # predict() S3 Methods #
@@ -143,12 +154,18 @@ predict.trainedKnn <- function(trainedModel, newData, dfOut = TRUE)
 ## Begin final function
     # goes to predict method in knn2.R
     predictions <- predict(trainedModel$model, newData)
-
+    print(newData)
+    print(predictions)
     # If doing classification, need to convert back to factor with
     # appropriate labels
     if (trainedModel$model$myLevels > 0)
-        predictions <- factor(predictions, labels = levels(trainedModel$vars$dv))
-
+    {
+        print(predictions)
+        predictions <- levelMap(predictions, levels(trainedModel$vars$dv))
+        #TODO: get rid of this hackish fix
+        if (nrow(newData) == 1)
+            predictions <- predictions[1]
+    }
 
     if (dfOut == FALSE)
         return (predictions)
