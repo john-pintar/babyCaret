@@ -1,6 +1,7 @@
 ### Sets up a grid of tuning parameters
 ## John Pintar
 
+
 #TODO: Add warnings and errors to public functions
         # checking input
 #TODO: Finish unit tests
@@ -9,7 +10,6 @@
 ########################
 # Tune object overview #
 ########################
-
 
 
 # tune objects are used for setting hyperparameters in train(). A tune object

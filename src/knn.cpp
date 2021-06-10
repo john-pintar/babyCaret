@@ -1,4 +1,5 @@
-//TODO: something is up with IDW, but it is not here...
+//TODO: double check idw
+//TODO: resolve class ties by decrementing k
 
 // K-Nearest Neighbors classification and regression
 // John Pintar
@@ -94,7 +95,6 @@ double idw(NumericVector values, NumericVector dists, double p)
 // [[Rcpp::export]]
 int voting(NumericVector values, NumericVector dists, int levels, double p)
 {
-    // Written while watching Biden's acceptance speech.
     NumericVector voters = values;
     bool foundId = false;
 
@@ -146,13 +146,13 @@ int voting(NumericVector values, NumericVector dists, int levels, double p)
 
     // Counting the votes.
     double max = 0;
-    int biden = 0;
+    int victor = 0;
     for (int i = 1; i <levels + 1; i++)
     {
         if (ballotBox(i) > max)
         {
             max = ballotBox(i);
-            biden = i;
+            victor = i;
             runOff = i;
         }
         // pushing tied values into here
@@ -164,10 +164,10 @@ int voting(NumericVector values, NumericVector dists, int levels, double p)
     // Why would I make relative distance a concern in the user isn't considering it themselves?
     // which is what iteratively decreasing vector length would effectively do.
     if (runOff.length() > 0)
-        biden = runOff(rand() % runOff.length());
+        victor = runOff(rand() % runOff.length());
 
 
-    return biden;
+    return victor;
 }
 
 

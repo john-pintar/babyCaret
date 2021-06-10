@@ -1,4 +1,4 @@
-### Keeps track of automated pre-processing steps.
+### Idea: Keeps track of automated pre-processing steps.
 ## John Pintar
 
 

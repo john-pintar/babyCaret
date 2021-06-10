@@ -1,3 +1,5 @@
+# Originally by Gero Szepannek
+
 ###############################################
 # For their feedback and suggestions thanks to:
 # - Bridget Ssendagala
@@ -9,7 +11,7 @@
 
 
 # My modifications have mostly been rewriting the distance distance matrix in C++
-# and ignoring some errors. The print method will eventually be changed. Currently
+# and ignoring some input errors to increase flexability. The print method will eventually be changed. Currently
 # does not support NA values, but that is not a problem for my application. May
 # look into NA values in Rcpp and add support later.
 

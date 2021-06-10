@@ -2,16 +2,7 @@
 ## John Pintar
 
 
-#TODO: Obviously, work on knn
-#TODO: get knn weights working. might need to change the datatype
-#TODO: Since predict is from the stats package, do I need to include a generic?
-            #looks like it's automatically imported
-#TODO: model frame might cause issues someday. its worth looking into.
-#TODO: deal with over reliance on colname vs index. should make matrix and tibble
-#       compatability pretty easy
-#TODO: knn: whats happening when 50 observations are equally close?
-#TODO: Remap factor assignment
-
+#TODO: deal with over reliance on colname vs index
 
 
 ####################################
@@ -175,8 +166,6 @@ predict.trainedKnn <- function(trainedModel, newData, dfOut = TRUE)
         return (newData)
     }
 ## End final function.
-
-
 
 
     # # check compatibility between training set and newData

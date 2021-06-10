@@ -1,12 +1,12 @@
 ### Computes and stores user's formula, model frame, and x/y input
 ## John Pintar
 
-# If you really want to optimize, you could do everything you need from the model frame
+# If you really want to simplify, you could do everything you need from the model frame
+
 
 ############################
 # userVars object overview #
 ############################
-
 
 
 # A userVars object is a six-slot list that holds the fit specified by the user. They contain the original data.frame,

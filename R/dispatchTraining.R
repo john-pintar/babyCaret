@@ -2,7 +2,6 @@
 ## John Pintar
 
 
-# TODO: Make less bad.
 # TODO: Document.
 # TODO: Figure out the KNN stuff
 # TODO: Experiment with pretty frames, standard frames, etc.

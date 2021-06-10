@@ -2,10 +2,13 @@
 # John Pintar
 
 
-
 #TODO: figure out a better way to handle the vector input issue.
 #TODO: Need guardrails for user.
-#TODO: cv sould work even when no target. 
+#TODO: cv should work even when no target. 
+#TODO: GUI
+#TODO: Parameter search
+#TODO: Documentation
+
 
 tuneFromMeth <- function(method)
 {
@@ -19,7 +22,8 @@ tuneFromMeth <- function(method)
 }
 
 
-#TODO: problem where last bit gets cut. force conditions for first and last folds
+#TODO: problem where last bit gets cut.
+    # temp solution: force conditions for first and last folds.
 pullData <- function(data, foldPos, k)
 {
     # foldSize is used to create the equal size partitions.
@@ -47,7 +51,7 @@ pullData <- function(data, foldPos, k)
     return (out)
 }
 
-
+# Calculate cumulative error (error summed across folds)
 cumError <- function(x, data, method, tune, i, k)
 {
     if (i == 0)
@@ -61,7 +65,7 @@ cumError <- function(x, data, method, tune, i, k)
 }
 
 
-#TODO: add data shuffling here eventially.
+#TODO: add data shuffling here
 getError <- function(x, data, method, tune, k)
 {
     out <- cumError(x, data, method, tune, k, k)
@@ -86,15 +90,7 @@ crossVal <- function(x, data, method, tune)
     tune$bestTune[1, 4] <- Inf
     tune <- update_best(tune)
 
-### Now we're primed...
-
-    #TODO: ensure retuning doesnt clone the error.
-
-
-    #where you need to show the user some stuff
-
-
-
+    
     usrSelect <- NULL
     usrInpt <- NULL
     usrFin <-FALSE
@@ -128,8 +124,7 @@ crossVal <- function(x, data, method, tune)
         if (doneCheck(usrInpt))
             return(train(data, x, method, tune))
 
-
-
+        
         tune <- string_update(tune, usrSelect, usrVal)
         error <- getError(x, data, method, tune, 5)
         tune <- update_score(tune, error)
@@ -137,15 +132,12 @@ crossVal <- function(x, data, method, tune)
 
         i <- i + 1
     }
-
-
-
-
+    
     return(tune)
 }
 
 
-# Change this to your old babyCaret function
+#TODO: Change this to the old babyCaret V0 function.
 doneCheck <- function(inpt)
 {
     if (identical(inpt, "done"))
@@ -154,7 +146,6 @@ doneCheck <- function(inpt)
         return(FALSE)
 }
 
-# I just dont see being able to make the reTune() object work...
 
 # The main display of cross validation
 cvDisplay <- function(tuneObj, usrSelect, i)
@@ -214,8 +205,6 @@ showTune <- function(tune, usrSelect, i)
             "\n", " recent:  ", recent,
             "\n", " current: ", current, "\n\n", sep = "")
 
-
-
     # PARAMS
 
     cat(crayon::bold("                  parameters\n"))
@@ -236,10 +225,6 @@ showTune <- function(tune, usrSelect, i)
 
         j <- j + 1
     }
-
-
-
-
 }
 
 

@@ -2,8 +2,7 @@
 ## John Pintar
 
 
-#TODO: figure out best practices for print methods. separate file or what?
-
+#TODO: figure out best practices for print methods. 
 
 
 #' @export

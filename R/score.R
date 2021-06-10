@@ -2,12 +2,9 @@
 ## John Pintar
 
 
-
-
 ###############################
 # Private Workhorse Functions #
 ###############################
-
 
 
 # Calculate percent misclassified

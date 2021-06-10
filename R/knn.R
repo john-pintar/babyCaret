@@ -95,7 +95,6 @@ init_knn <- function(modelFrame, k, p, featWeights)
 ##################
 
 
-#TODO: document
 # Predict with a babyKnn model
 #
 # Makes predictions using a babyKnn model

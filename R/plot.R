@@ -23,7 +23,6 @@ plot.trainedTree <- function(tree, showInterior = FALSE, ...)
     {
         if (!showInterior)
             rpart.plot::rpart.plot(tree$model, type = 2, extra = 1, roundint = FALSE)
-
         else
             rpart.plot::rpart.plot(tree$model, type = 4, extra = 1, roundint = FALSE)
     }
@@ -33,7 +32,6 @@ plot.trainedTree <- function(tree, showInterior = FALSE, ...)
     {
         if (!showInterior)
             rpart.plot::rpart.plot(tree$model, type = 0, extra = 2, roundint = FALSE)
-
         else
             rpart.plot::rpart.plot(tree$model, type = 4, extra = 2, roundint = FALSE)
     }

@@ -1,29 +1,20 @@
 ## Preprocessing function(s)
 # John Pintar
 
-
-# THU fully Wrap this up. Potentially get print and summary going
-# FRI - SUN Wrapup.
-# If get done on Satuday, could use sunday and monday to organize music and
-    # work on perceptron
-
-# After unit testing, this is done enough for now. Can improve later.
-
-
 # Note: trying different brace formatting.
-
+# Note: Verify which TODOs have been completed
 
 #TODO: Add target scale ignore to match process 
 
 #TODO: If you find the time, this file is ripe for improvements. getting rid of
-    # loops, using a consistent approach, DRY (preProc and matchProc)
+    # loops, using a consistent approach, etc
 #TODO: Add support for imputation
 #TODO: Process another data.frame by the same parameters
 #TODO: in findNearest. Could do a cast and sort to order the nearests better.
 #TODO: Unit test
 #TODO: clean and comment
 #TODO: format messages better
-#TODO: make the output of binning and scaling less crazy(long)
+#TODO: make the output of binning and scaling less crazy (long)
 #TODO: Convert binning to interval notation (-inf, 2], (4, inf)
 # what if make it so that binCols can bin all with null, NA, or "all"
 #TODO: Unit testing for matchProc and attrs.
