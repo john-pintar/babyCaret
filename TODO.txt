@@ -1,1 +1,28 @@
+1. Finish the perceptron implementation
+	Document
+	
+2. Write beginning of tutorials (up to the actual usage of babyCaret) for
+	- K-prototypes
+	- Perceptron
+	- Document
+	
+3. Finish Cross validation
+	3.0 - Tighten up the manual command line CV
+	3.1 - Integrate the perceptron
+	3.2 - add auto CV
+	
+4. Look into GUIfying CV
+
+5. Tighten up and document
+
+6. Finish tutorials
+
+7. Add implementation
+
+8. integrate algorithms
+
+9. Add tutorials
+
+
 * Standardize formatting
+* KNN tie breaking by decrimenting k
