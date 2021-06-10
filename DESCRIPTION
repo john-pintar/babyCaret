@@ -1,12 +1,11 @@
 Package: babyCaret
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
+Title: Beginner oriented machine learning
 Version: 1.0
-Date: 2020-09-01
+Date: 2021-06-10
 Author: Your Name
 Maintainer: Your Name <your@email.com>
-Description: One paragraph description of what the package does as one or more
-        full sentences.
+Description: babyCaret is a simple machine learning package intended for new users.
 License: GPL (>= 2)
 Imports: 
     Rcpp,
